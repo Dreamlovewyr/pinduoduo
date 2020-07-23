@@ -1,0 +1,45 @@
+:host ::ng-deep {
+  .container {
+    position: relative;
+    overflow: hidden;
+
+    .image-slider {
+      display: flex;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      scroll-snap-align: start;
+    }
+
+    .nav-section {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      color: #ffffff;
+      background-color: black;
+      display: flex;
+      justify-content: flex-end;
+      align-items: stretch;
+
+      .slide-button {
+        display: flex;
+        width: 10px;
+        height: 10px;
+        background-color: #ffffff;
+        text-decoration: none;
+        border-radius: 50%;
+        margin: 5px;
+        &-selected {
+          background-color: red;
+        }
+      }
+    }
+  }
+}
