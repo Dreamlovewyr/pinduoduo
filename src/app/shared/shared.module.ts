@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { commonComponents } from './components';
+import { directives } from './directives';
 
 @NgModule({
-  declarations: [...commonComponents],
+  declarations: [...commonComponents, ...directives],
   imports: [
     CommonModule,
     FormsModule,
@@ -13,7 +14,9 @@ import { commonComponents } from './components';
   exports: [
     CommonModule,
     FormsModule,
-    ...commonComponents
-  ]
+    ...commonComponents,
+    ...directives
+  ],
+  providers: [...directives]
 })
 export class SharedModule { }

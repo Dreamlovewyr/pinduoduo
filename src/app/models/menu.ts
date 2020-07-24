@@ -8,3 +8,10 @@ export interface ImageSlider {
   link: string;
   caption: string;
 }
+
+export interface Channel {
+  id: number;
+  icon: string;
+  title: string;
+  link: string;
+}
