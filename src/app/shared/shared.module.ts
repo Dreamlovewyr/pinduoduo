@@ -4,9 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { commonComponents } from './components';
 import { directives } from './directives';
+import { AgoPipe } from './pipes/ago.pipe';
+import { FilterOperatorsComponent } from './components/filter-operators/filter-operators.component';
 
 @NgModule({
-  declarations: [...commonComponents, ...directives],
+  declarations: [...commonComponents, ...directives, AgoPipe, FilterOperatorsComponent],
   imports: [
     CommonModule,
     FormsModule,

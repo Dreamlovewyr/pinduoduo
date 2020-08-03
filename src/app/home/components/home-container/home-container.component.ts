@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 import { TopMenu, ImageSlider } from './../../../../app/models';
 
@@ -8,6 +9,7 @@ import { TopMenu, ImageSlider } from './../../../../app/models';
   styleUrls: ['./home-container.component.less']
 })
 export class HomeContainerComponent implements OnInit {
+  behavior$: BehaviorSubject<number>;
   topMenus: TopMenu[] = [
     {
       title: '热门',
@@ -43,9 +45,21 @@ export class HomeContainerComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+    this.behavior$ = new BehaviorSubject(0);
+    this.behavior$.subscribe({
+      next: (v) => console.log('observerA: ' + v)
+    });
+    this.behavior$.next(1);
+    this.behavior$.next(2);
+    this.behavior$.subscribe({
+      next: (v) => console.log('observerB: ' + v)
+    });
+    this.behavior$.next(3);
+    this.behavior$.subscribe(val => { console.log('val', val) })
   }
 
   handleSelect(menu: TopMenu): void {

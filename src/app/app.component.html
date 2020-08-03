@@ -1,4 +1,10 @@
-<!-- <app-scrollable-tab [menus]="topMenus" (menuSelect)="handleSelect($event)"></app-scrollable-tab>
-<app-image-slider [sliders]="imgSliders"></app-image-slider>
-<app-horizontal-grid></app-horizontal-grid> -->
+<!-- <app-scrollable-tab [menus]="topMenus" (menuSelect)="handleSelect($event)"></app-scrollable-tab> -->
+<!-- <app-image-slider [sliders]="imgSliders"></app-image-slider> -->
+<app-horizontal-grid>
+  <span appGridItem *ngFor="let item of channels">
+    <img [src]="item.icon" alt="" [appGridItemImage]="'2rem'" [fitMode]="'none'">
+    <span appGridItemTitle="1rem" class="title">{{ item.title }}</span>
+  </span>
+</app-horizontal-grid>
+<app-filter-operators></app-filter-operators>
 <router-outlet></router-outlet>

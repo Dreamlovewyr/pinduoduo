@@ -16,18 +16,30 @@ export function Emoji(): any {
   };
 }
 
+// export function Confirmable(message: string): any {
+//   return (target: object, key: string, descriptor: PropertyDescriptor) => {
+//     const origin = descriptor.value;
+//     descriptor.value = function (...args: any[]) {
+//       const allow = window.confirm(message);
+//       if (allow) {
+//         const result = origin.apply(this, args);
+//         return result;
+//       }
+//       return null;
+//     };
+//     return descriptor;
+//   }
+// }
+
 export function Confirmable(message: string): any {
-  return (target: object, key: string, descriptor: PropertyDescriptor) => {
+  return (taget: object, key: string, descriptor: PropertyDescriptor) => {
     const origin = descriptor.value;
     descriptor.value = function (...args: any[]) {
       const allow = window.confirm(message);
-      if (allow) {
-        const result = origin.apply(this, args);
-        return result;
-      }
+      if (allow) { const reslut = origin.apply(this, args); return reslut; }
       return null;
     };
     return descriptor;
-  }
+  };
 }
 

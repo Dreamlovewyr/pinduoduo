@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { TopMenu, ImageSlider } from './../app/models';
+import { TopMenu, ImageSlider, Channel } from './../app/models';
 import { ImageSliderComponent } from './shared/components/image-slider';
 
 @Component({
@@ -8,6 +8,7 @@ import { ImageSliderComponent } from './shared/components/image-slider';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit, AfterViewInit {
+  channels: Channel[] = [];
   imgSliders: ImageSlider[] = [
   ];
   username = '';

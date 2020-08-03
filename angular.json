@@ -7,7 +7,8 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "less"
+          "style": "less",
+          "skipTests": true
         }
       },
       "root": "",
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pinduoduo"
+    }
+  },
+  "defaultProject": "pinduoduo",
+  "cli": {
+    "analytics": "ba007380-1473-46d7-870c-38a2ee0c2ec1"
+  }
 }

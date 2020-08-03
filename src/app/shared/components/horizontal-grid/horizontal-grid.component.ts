@@ -8,27 +8,27 @@ import { Channel } from '../../../models';
   styleUrls: ['./horizontal-grid.component.less']
 })
 export class HorizontalGridComponent implements OnInit {
-  // channels: Channel[] = [];
+  channels: Channel[] = [];
 
   // 双向绑定
-  // private _username: string;
+  private _username: string;
 
-  // @Input()
-  // public get username(): string {
-  //   return this._username;
-  // }
+  @Input()
+  public get username(): string {
+    return this._username;
+  }
 
-  // public set username(name: string) {
-  //   this._username = name;
-  //   this.userInput.emit(name);
-  // }
+  public set username(name: string) {
+    this._username = name;
+    this.userInput.emit(name);
+  }
 
-  // @Output()
-  // userInput = new EventEmitter<string>();
+  @Output()
+  userInput = new EventEmitter<string>();
 
   // 自定义装饰器
-  // @Emoji()
-  // result = 'hello';
+  @Emoji()
+  result = 'hello';
   sliderMargin = '0';
 
   @Input() cols = 8;
