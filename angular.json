@@ -58,6 +58,13 @@
               ],
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
+            },
+            "cn": {
+              "aot": true,
+              "i18nFile": "src/locale/messages.cn.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "cn",
+              "i18nMissingTranslation": "error"
             }
           }
         },
@@ -69,6 +76,9 @@
           "configurations": {
             "production": {
               "browserTarget": "pinduoduo:build:production"
+            },
+            "cn": {
+              "browserTarget": "pinduoduo:build:cn"
             }
           }
         },
